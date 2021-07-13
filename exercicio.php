@@ -8,6 +8,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/exercicio.css">
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,14 +19,21 @@
     <title>Exercício PHP - COD3R</title>
 </head>
 
-<body>
+<body class="exercicio">
     <header class="cabecalho">
         <h1>Curso PHP - COD3R</h1>
         <h2>Visualização dos Exercícios</h2>
     </header>
+    <nav class="navegacao">
+        <a href="<?= "/{$_GET['dir']}/{$_GET['file']}.php" ?>" class="verde">Sem formatação</a>
+        <a href="index.php" class="vermelho">Voltar</a>
+    </nav>
     <main class="principal">
         <div class="conteudo">
-            
+            <?php
+                // include($_GET['dir'] . "/" . $_GET['file'] . ".php");
+                include(__DIR__ . "/{$_GET['dir']}/{$_GET['file']}.php");
+            ?>
         </div>
     </main>
     <footer class="rodape">
